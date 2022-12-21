@@ -1,3 +1,144 @@
-.logo-bottom {
-  transform: scale(1, -1);
+body {
+  position: relative;
+}
+
+.site-header {
+  border: 0;
+}
+
+.ham-wrap {
+  position: absolute;
+  display: block;
+  top: 100px;
+  right: 100px;
+  .ham-btn {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    outline: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    span {
+      position: relative;
+      display: block;
+      width: 80px;
+      height: 5px;
+      background: #000;
+      pointer-events: none;
+      transition: background 0.7s ease-out;
+      &::before {
+        content: "";
+        position: absolute;
+        top: -30px;
+        display: block;
+        width: 80px;
+        height: 5px;
+        background: #000;
+        opacity: 1;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -30px;
+        display: block;
+        width: 80px;
+        height: 5px;
+        background: #000;
+        opacity: 1;
+      }
+    }
+    &.open {
+      span {
+        background: none;
+        &::before {
+          top: 0;
+          animation: ham1 0.7s forwards;
+        }
+        &::after {
+          bottom: 0;
+          animation: ham3 0.7s forwards;
+        }
+      }
+    }
+    &.close {
+      span {
+        background: #000;
+        &::before {
+          top: -30px;
+          animation: ham1r 0.7s backwards;
+        }
+        &::after {
+          bottom: -30px;
+          animation: ham3r 0.7s backwards;
+        }
+      }
+    }
+
+    @keyframes ham1 {
+      0% {
+        top: -30px;
+        transform: rotate(0);
+      }
+      70% {
+        top: 0;
+        transform: rotate(0);
+      }
+      100% {
+        top: 0;
+        transform-origin: center center;
+        transform: rotate(-45deg);
+      }
+    }
+    @keyframes ham3 {
+      0% {
+        bottom: -30px;
+        transform: rotate(0);
+      }
+      70% {
+        bottom: 0;
+        transform: rotate(0);
+      }
+      100% {
+        bottom: 0;
+        transform-origin: center center;
+        transform: rotate(45deg);
+      }
+    }
+    @keyframes ham1r {
+      0% {
+        top: 0;
+        transform-origin: center center;
+        transform: rotate(-45deg);
+      }
+      70% {
+        top: 0;
+        transform: rotate(0);
+      }
+      100% {
+        top: -30px;
+        transform: rotate(0);
+      }
+    }
+    @keyframes ham3r {
+      0% {
+        bottom: 0;
+        transform-origin: center center;
+        transform: rotate(45deg);
+      }
+      70% {
+        bottom: 0;
+        transform: rotate(0);
+      }
+      100% {
+        bottom: -30px;
+        transform: rotate(0);
+      }
+    }
+  }
 }

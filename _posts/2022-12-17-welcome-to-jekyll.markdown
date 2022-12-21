@@ -1,29 +1,44 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-date:   2022-12-17 00:47:11 +0900
-categories: jekyll update
+title: "Web UI markup development"
+date: 2022-12-17 00:47:11 +0900
+categories: stories
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
-Jekyll requires blog post files to be named according to the following format:
+안녕하세요!
 
-`YEAR-MONTH-DAY-title.MARKUP`
+마크업브로는 웹 UI 마크업(퍼블리싱) 작업자의 블로그입니다.
 
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+<div class="ham-wrap">
+  <button type="button" class="ham-btn">
+    <span></span>
+  </button>
+</div>
 
-Jekyll also offers powerful support for code snippets:
+<script>
+  $(function() {
+    $('.ham-btn').on('click', function(e) {
+      var cl = $(e.target);
+      if (cl.hasClass('open'))
+        cl.removeClass('open').addClass('close');
+      else {
+        cl.removeClass('close').addClass('open');
+      }
+    });
+  })
+</script>
 
-{% highlight ruby %}
+<!-- {% highlight ruby %}
 def print_hi(name)
-  puts "Hi, #{name}"
+puts "Hi, #{name}"
 end
 print_hi('Tom')
 #=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+{% endhighlight %} -->
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+보이는 블로그는 [Jekyll][jekyll-docs] + [Github][github-pages] Pages로 작성되었습니다.
 
 [jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
+[jekyll-gh]: https://github.com/jekyll/jekyll
 [jekyll-talk]: https://talk.jekyllrb.com/
+[github-pages]: https://talk.jekyllrb.com/
