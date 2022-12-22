@@ -9,25 +9,6 @@ categories: stories
 
 마크업브로는 웹 UI 마크업(퍼블리싱) 작업자의 블로그입니다.
 
-<div class="ham-wrap">
-  <button type="button" class="ham-btn">
-    <span></span>
-  </button>
-</div>
-
-<script>
-  $(function() {
-    $('.ham-btn').on('click', function(e) {
-      var cl = $(e.target);
-      if (cl.hasClass('open'))
-        cl.removeClass('open').addClass('close');
-      else {
-        cl.removeClass('close').addClass('open');
-      }
-    });
-  })
-</script>
-
 <!-- {% highlight ruby %}
 def print_hi(name)
 puts "Hi, #{name}"
